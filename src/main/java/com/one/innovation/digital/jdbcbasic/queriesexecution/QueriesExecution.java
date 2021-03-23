@@ -34,8 +34,8 @@ public class QueriesExecution {
 
         // =========================== 4 - Atualizar ================================================
         Student studentToUpdate = studentDAO.getById(3);
-        studentToUpdate.setName("Joaquim");
-        studentToUpdate.setAgesold(18);
+        studentToUpdate.setName("Ralf");
+        studentToUpdate.setAgesold(9);
         studentToUpdate.setState("PE");
 
         //studentDAO.update(studentToUpdate);
