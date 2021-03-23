@@ -21,7 +21,7 @@ public class ConnectionJDBC {
 
         // Criar conexão usando o DriverManager, passando como parâmetros a string de conexão,
         // usuário e senha do usuário.
-        try (Connection con = DriverManager.getConnection(connectionUrl, user, password)) {
+        try (Connection conn = DriverManager.getConnection(connectionUrl, user, password)) {
             System.out.println("Sucesso ao se conectar ao banco MySQL!");
         } catch (SQLException e) {
             System.out.println("Falha ao se conectar ao banco MySQL!");
