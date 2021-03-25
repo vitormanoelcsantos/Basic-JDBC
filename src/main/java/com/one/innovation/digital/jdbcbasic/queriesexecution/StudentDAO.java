@@ -1,6 +1,7 @@
 package com.one.innovation.digital.jdbcbasic.queriesexecution;
 
 import java.sql.Connection;
+import java.sql.Statement;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -13,11 +14,13 @@ public class StudentDAO {
         //Preparar lista que irá retornar alunos após consultar o banco de dados;
         List<Student> students = new ArrayList<>();
 
+        // Designer pattern Factory
         try (Connection conn = ConnectionFactory.getConnection()) {
             //Preparar consulta SQL.
             String sql = "SELECT * FROM student";
 
-            //Preparar statement com os parâmetros recebidos (nesta função não tem parâmetros, pois irá retornar todos os valores da tabela aluno)
+            //Preparar statement com os parâmetros recebidos (nesta função não tem parâmetros, pois irá retornar
+            //todos os valores da tabela aluno)
             PreparedStatement stmt = conn.prepareStatement(sql);
 
             //Executa consulta e armazena o retorno da consulta no objeto "rs".
@@ -38,7 +41,7 @@ public class StudentDAO {
                 ));
             }
         } catch (SQLException e) {
-            System.out.println("Listagem de alunos FALHOU!");
+            System.out.println("Listagem de alunos falhou!");
             e.printStackTrace();
         }
 
